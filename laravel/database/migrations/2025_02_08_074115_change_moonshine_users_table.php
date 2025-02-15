@@ -15,8 +15,8 @@ return new class extends Migration
             $table->string("full_name")->nullable();
             $table->string("job_title")->nullable();
             $table->date("work_start")->nullable();
-            $table->enum("status", ["work", "holiday"]);
-            $table->date("work_days");
+            $table->enum("status", ["work", "holiday"])->default("work");
+            $table->date("work_days")->nullable();
         });
     }
 

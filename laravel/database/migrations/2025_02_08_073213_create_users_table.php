@@ -16,8 +16,8 @@ return new class extends Migration
             $table->string('full_name');
             $table->string('phone')->nullable();
             $table->string('email')->nullable();
-            $table->foreignIdFor(App\Models\Company::class);
-            $table->json("social_links");
+            $table->foreignIdFor(App\Models\Company::class)->nullable();
+            $table->json("social_links")->nullable();
             $table->timestamps();
         });
     }
