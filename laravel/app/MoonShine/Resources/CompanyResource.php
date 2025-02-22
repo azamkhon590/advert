@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\Company;
 
 use MoonShine\Resources\ModelResource;
+use \MoonShine\Fields\Text;
 use MoonShine\Decorations\Block;
 use MoonShine\Fields\ID;
 use MoonShine\Fields\Field;
@@ -30,10 +31,10 @@ class CompanyResource extends ModelResource
         return [
             Block::make([
                 ID::make()->sortable(),
-                \MoonShine\Fields\Text::make("name"),
-                \MoonShine\Fields\Text::make("phone")->mask("+7 999 999-99-99"),
-                \MoonShine\Fields\Text::make("email"),
-                \MoonShine\Fields\Text::make("address"),
+                    Text::make("name"),
+                    Text::make("phone")->mask("+7 999 999-99-99"),
+                    Text::make("email"),
+                    Text::make("address"),
             ]),
         ];
     }
