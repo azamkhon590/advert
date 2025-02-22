@@ -22,5 +22,5 @@ class Order extends Model
         "comments" => "json",
         "date_time" => "datetime",
         "date_end" => "datetime",
-    ]
+    ];
 }
