@@ -15,9 +15,6 @@ use MoonShine\Fields\Field;
 use MoonShine\Components\MoonShineComponent;
 use MoonShine\Fields\BelongsTo;
 
-/**
- * @extends ModelResource<Company>
- */
 class CompanyResource extends ModelResource
 {
     protected string $model = Company::class;

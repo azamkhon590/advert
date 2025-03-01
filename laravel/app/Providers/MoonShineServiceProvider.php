@@ -56,6 +56,8 @@ class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
 
             MenuItem::make("Компании",new \App\MoonShine\Resources\CompanyResource()),
             MenuItem::make("Клиенты",new \App\MoonShine\Resources\UserResource()),
+            MenuItem::make("Заказы",new \App\MoonShine\Resources\OrderResource()),
+            MenuItem::make("Категории заказов",new \App\MoonShine\Resources\OrderCategoryResource()),
         ];
     }
 
