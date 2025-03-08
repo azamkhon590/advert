@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use \MoonShine\Fields\RelationShips\BelongsToMany;
+use MoonShine\Models\MoonshineUser;
 
 class Order extends Model
 {
@@ -13,7 +14,7 @@ class Order extends Model
     protected $fillable = [
         "description",
         "date_start",
-        "date_start",
+        "date_end",
         "status",
         "budget",
         "comments",
@@ -27,5 +28,8 @@ class Order extends Model
 
     public function categories(){
         return $this->belongsToMany(OrderCategory::class, "order_order_categories");
+    }
+    public function users(){
+        return $this->belongsToMany(MoonshineUser::class, "moon_shine_users_orders");
     }
 }

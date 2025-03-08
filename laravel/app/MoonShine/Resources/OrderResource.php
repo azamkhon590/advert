@@ -19,6 +19,9 @@ use MoonShine\Decorations\Block;
 use MoonShine\Fields\ID;
 use MoonShine\Fields\Field;
 use MoonShine\Components\MoonShineComponent;
+use MoonShine\Models\MoonshineUser;
+use MoonShine\Models\MoonShineUserResource;
+use App\Models\moonShineUsersOrder;
 
 /**
  * @extends ModelResource<Order>
@@ -52,8 +55,8 @@ class OrderResource extends ModelResource
                     Text::make("name","name"),
                     Textarea::make("text","text"),
                 ]),
-                BelongsToMany::make("Categories","Categories", resource: new OrderCategoryResource()),
-               
+                BelongsToMany::make("Categories","Categories", resource: new OrderCategoryResource())->selectMode(),
+                BelongsToMany::make("Users","Users", resource: new \MoonShine\Resources\MoonShineUserResource())->selectMode(),
             ]),
         ];
     }

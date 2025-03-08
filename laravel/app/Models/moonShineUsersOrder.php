@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class moonShineUsersOrder extends Model
 {
     use HasFactory;
+
+    // public function users(){
+    //     return $this->belongsToMany(MoonshineUser::class, "moon_shine_users_order");
+    // }
 }
